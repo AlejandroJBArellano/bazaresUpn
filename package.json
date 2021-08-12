@@ -1,0 +1,38 @@
+{
+  "name": "bazaresupn",
+  "version": "0.1.0",
+  "description": "a red where the new locals from upn can connect and sell everything what they do",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git remote add origin https://github.com/AlejandroJBArellano/bazaresUpn.git"
+  },
+  "keywords": [
+    "bazares",
+    "mongoose",
+    "mongodb",
+    "node",
+    "express"
+  ],
+  "author": "alejandrojbarellano",
+  "license": "ISC",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "dotenv": "^10.0.0",
+    "ejs-mate": "^3.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^5.13.5",
+    "morgan": "^1.10.0",
+    "passport-instagram": "^1.0.0",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
