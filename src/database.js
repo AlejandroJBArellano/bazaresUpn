@@ -5,5 +5,5 @@ mongoose.connect(mongodb.URI, {
     useUnifiedTopology: true, 
     useFindAndModify: false, 
     useCreateIndex: true
-}).then(db => console.log(`${db.connection.host}`))
+}).then(db => console.log(`Database hosted on:${db.connection.host}`))
     .catch(err => console.error(err));

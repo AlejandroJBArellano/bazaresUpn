@@ -2,9 +2,18 @@ const Publication = require("../models/Publication");
 const User = require("../models/User");
 
 const index = (req, res) => {
-    res.render("index", {
-        title: "Bazares de Uruapan - Home",
+    res.json({
+        message: "Welcome"
     })
 }
 
-module.exports = index
+const getUser = async ({body, session}, res) => {
+    const user = await User.find(body.id);
+    res.json({
+        ...user
+    })
+}
+
+module.exports = {
+    index,
+}
