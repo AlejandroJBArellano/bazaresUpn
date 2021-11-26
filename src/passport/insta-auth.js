@@ -17,7 +17,7 @@ passport.use("instagram", new InstagramStrategy({
   callbackURL: `https://bazaresupnapi.herokuapp.com/auth/10795/auth/callback`
   },
   async function(accessToken, refreshToken, profile, done) {
-    process.nextTick(() => {
+    process.nextTick(async () => {
       console.log(profile)
       const instaUser = new User(profile)
       await instaUser.save();
