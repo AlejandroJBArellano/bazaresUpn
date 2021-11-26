@@ -3,6 +3,7 @@ const express = require("express"),
 path = require("path"),
 router = require("./routes/index"),
 passport = require("passport"),
+session = require("express-session"),
 morgan = require("morgan");
 
 //Inicializations
@@ -18,7 +19,7 @@ app.set("port", process.env.PORT)
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.use(express.session({
+app.use(session({
     secret: "keyboard cat"
 }))
 app.use(passport.initialize());
