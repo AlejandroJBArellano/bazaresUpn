@@ -18,6 +18,7 @@ passport.use("instagram", new InstagramStrategy({
   },
   function(accessToken, refreshToken, profile, done) {
     console.log(profile)
+    return done(err, profile)
     /*
     User.findOrCreate({ instagramId: profile.id }, function (err, user) {
       return done(err, user);
