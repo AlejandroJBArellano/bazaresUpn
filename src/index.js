@@ -3,13 +3,12 @@ const express = require("express"),
 path = require("path"),
 router = require("./routes/index"),
 passport = require("passport"),
-session = require("express-session"),
 morgan = require("morgan");
 
 //Inicializations
 app = express();
-require("./database");
 require("./passport/insta-auth");
+require("./database");
 
 // settings
 
@@ -19,7 +18,7 @@ app.set("port", process.env.PORT)
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.use(session({
+app.use(express.session({
     secret: "keyboard cat"
 }))
 app.use(passport.initialize());
