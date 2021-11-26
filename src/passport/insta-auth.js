@@ -16,12 +16,14 @@ passport.use("instagram", new InstagramStrategy({
   clientSecret: INSTAGRAM_CLIENT_SECRET,
   callbackURL: `https://bazaresupnapi.herokuapp.com/auth/10795/auth/callback`
   },
-  function(accessToken, refreshToken, profile, done) {
+  async function(accessToken, refreshToken, profile, done) {
     console.log(profile)
-    return done(err, profile)
+    const instaUser = new User(profile)
+    await instaUser.save();
+    console.log(instaUser)
+    return done(null, user);
     /*
     User.findOrCreate({ instagramId: profile.id }, function (err, user) {
-      return done(err, user);
     }); */
   }
 ));
