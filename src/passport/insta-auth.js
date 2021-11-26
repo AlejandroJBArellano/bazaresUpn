@@ -14,7 +14,7 @@ passport.deserializeUser(async (id, done)=>{
 passport.use("instagram", new InstagramStrategy({
   clientID: INSTAGRAM_CLIENT_ID,
   clientSecret: INSTAGRAM_CLIENT_SECRET,
-  callbackURL: `${process.env.PORT}/auth/callback`
+  callbackURL: `https://bazaresupnapi.herokuapp.com/auth/10795/auth/callback`
   },
   function(accessToken, refreshToken, profile, done) {
     console.log(profile)

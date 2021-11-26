@@ -8,9 +8,9 @@ passport = require("passport");
 
 router.get("/", get.index)
 
-router.get('/auth/instagram', passport.authenticate('instagram', {scope: ["profile"]}), (req, res) => {});
+router.get('/auth/instagram', passport.authenticate('instagram', {scope: ["user_profile"]}), (req, res) => {});
 
-router.get('/auth/instagram/callback', 
+router.get('/auth/10795/auth/callback', 
   passport.authenticate('instagram', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
