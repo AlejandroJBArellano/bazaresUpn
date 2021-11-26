@@ -7,8 +7,8 @@ passport.serializeUser((user, done)=>{
   done(null, user); //se va a estar intercambiando entre múltiples páginas
 });
 passport.deserializeUser(async (id, done)=>{
-  const user = await User.findById(id)
-  done(null, user); //consulta para ver que exista en la base de datos, como existe, se declara null
+  // const user = await User.findById(id)
+  done(null, obj); //consulta para ver que exista en la base de datos, como existe, se declara null
 })
 
 passport.use("instagram", new InstagramStrategy({
