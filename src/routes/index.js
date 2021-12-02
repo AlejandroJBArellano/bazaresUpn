@@ -13,9 +13,14 @@ router.get('/auth/instagram', passport.authenticate('instagram', {scope: ["user_
 router.get('/auth/10795/auth/callback', 
   passport.authenticate('instagram', { failureRedirect: '/login' }),
   function(req, res) {
+    console.log(req.query)
     console.log("XD")
     // Successful authentication, redirect home.
     res.json(req.session);
 });
+
+router.get("/login", (req, res) => {
+  res.json(req)
+})
 
 module.exports = router

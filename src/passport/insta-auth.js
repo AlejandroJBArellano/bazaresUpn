@@ -18,10 +18,10 @@ passport.use("instagram", new InstagramStrategy({
   },
   async function(accessToken, refreshToken, profile, done) {
     process.nextTick(async () => {
-      console.log(profile)
-      const instaUser = new User(profile)
-      await instaUser.save();
-      console.log(instaUser)
+      // console.log(profile)
+      // const instaUser = new User(profile)
+      // await instaUser.save();
+      // console.log(instaUser)
       return done(null, user);
     })
     /*
